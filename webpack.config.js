@@ -4,29 +4,28 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const publicDir = path.join(__dirname, '/public');
 module.exports = [
     {
-        mode: 'development',
-        devServer: {
-            historyApiFallback: true,
-            contentBase: publicDir,
-        },
-    },
-    {
-        mode: 'development',
         entry: [
-            './src/index.js',
+            './src/index.jsx',
         ],
         output: {
             path: publicDir,
             publicPath: '/',
             filename: 'bundle.js',
         },
+        devServer: {
+            historyApiFallback: true,
+            contentBase: publicDir,
+        },
         module: {
             rules: [{
+                test: /\.js(x)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['react', 'es2015'],
-                },
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['react', 'es2015'],
+                    },
+                }],
             }],
         },
         resolve: {
@@ -34,7 +33,6 @@ module.exports = [
         },
     },
     {
-        mode: 'development',
         entry: {
             style: './stylesheets/index.scss',
         },

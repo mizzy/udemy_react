@@ -5,7 +5,8 @@
     "author": "Gosuke Miyashita <gosukenator@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "start": "./node_modules/.bin/webpack-dev-server"
+        "start": "./node_modules/.bin/webpack-dev-server --mode=development",
+        "compile": "./node_modules/.bin/webpack --mode=development"
     },
     "dependencies": {
         "babel-core": "^6.26.3",
@@ -17,6 +18,8 @@
         "eslint-plugin-react": "^7.11.0",
         "import-glob-loader": "^1.1.0",
         "node-sass": "^4.9.3",
+        "react": "^16.4.2",
+        "react-dom": "^16.4.2",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.22.1",
         "webpack": "^4.16.5",
