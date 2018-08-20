@@ -19,6 +19,7 @@
         "eslint-plugin-react": "^7.11.0",
         "geolib": "^2.0.24",
         "import-glob-loader": "^1.1.0",
+        "lodash": "^4.17.10",
         "node-sass": "^4.9.3",
         "react": "^16.4.2",
         "react-dom": "^16.4.2",
